@@ -13,12 +13,12 @@ class PostViewset(viewsets.ModelViewSet):
     serializer_class=PostSerializer
   
     queryset=Post.objects.all()
-    def get_queryset(self):
-        slug=self.request.query_params.get('slug',None)
-        return Post.objects.filter(slug=slug)
+    # def get_queryset(self):
+    #     slug=self.request.query_params.get('slug',None)
+    #     return Post.objects.filter(slug=slug)
 
-    def get_object(self):
-        item=self.kwargs.get('pk')
-        return get_object_or_404(Post,slug=item)
+    # def get_object(self):
+    #     item=self.kwargs.get('pk')
+    #     return get_object_or_404(Post,slug=item)
     
 
